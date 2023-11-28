@@ -1,0 +1,14 @@
+Account erstellen...
+ssh-keygen anwerfen, ssh-agent starten(eval "$(ssh-agent -s") und nicht public key via: "ssh-add ~/.ssh/notPubKey" . Der public-key wir ausge"cat"et, kopiert und in den Github Settings unter ssh-keys hinterlegt. Bei Problemen mit der Einrichtung kann es sinnvoll sein den löschen Befehl für ssh-keys zu erfahren: "ssh-kexgen -R Github.com "
+Nach der Installation von git im localen System erstellen wir ein Verzeichniss für das angestrebte Projekt und fahren dann wie folgt fort:
+# im Projektverzeichniss:
+git init # erstellen einer Basis git Umgebung
+mkdir modules # Programmmodulverzeichniss
+mkdir config # Programmconfigverzeichniss
+mkdir data # Programmoutputverzeichniss
+touch .gitignore # erstellen der Sync-Regeldatei 
+git add . # jedes Verzeichniss muss explizit eingefügt werden.
+git commit -m "Adds repo structure for ..." # Kommentieren!
+git remote add origin git@github.com:GitUserName/ProjektName # Projektverzeichniss in Github erzeugen
+git push -u origin master # automatisch erzeugter Branch master wird aufs Hub gedrückt.
+# für jede weitere Änderung muss das jeweilige Verzeichniss hinzugefügt werden und nach commit'eten Beiträgen ein git push -u origin BranchName geschehen. Für jede neue Funktion wird zuerst ein Clone der Master Branch erstellt, nach der zu implementierenden Funktionalität 
